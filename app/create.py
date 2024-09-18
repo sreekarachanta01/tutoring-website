@@ -1,4 +1,4 @@
-# app/crud.py
+# app/create.py
 from app.database import db
 from app.models import User, Course
 
