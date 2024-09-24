@@ -1,4 +1,5 @@
 # app/models.py
+#providing validated models for users and courses.
 from pydantic import BaseModel
 from typing import List, Optional
 

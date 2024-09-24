@@ -4,9 +4,10 @@ from bson import ObjectId
 
 app = FastAPI()
 
-# Connect to MongoDB
+# Connect to MongoDB - also can be database.py(seperate file)
 client = MongoClient("mongodb://localhost:27017")
 db = client["tutoring_db"]
+
 
 # Helper function to convert MongoDB ObjectId to string
 def serialize_dict(doc):
@@ -14,6 +15,8 @@ def serialize_dict(doc):
     Converts MongoDB document (with ObjectId) to a serializable dict
     """
     return {**doc, "_id": str(doc["_id"])}
+
+
 
 @app.post("/users/create")
 async def create_user(user: dict):
@@ -56,4 +59,5 @@ async def get_courses():
         course_list = [serialize_dict(course) for course in courses]
         return {"courses": course_list}
     except Exception as e:
-        raise HTTPException(status_code=500, detail=f"Error fetching courses: {str(e)}")
+        raise HTTPException(status_code=500, detail=f"Error fetching courses {str(e)}")
+    
