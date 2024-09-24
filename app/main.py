@@ -9,7 +9,7 @@ client = MongoClient("mongodb://localhost:27017")
 db = client["tutoring_db"]
 
 
-# Helper function to convert MongoDB ObjectId to string
+# Helper function to convert MongoDB ObjectID to String
 def serialize_dict(doc):
     """
     Converts MongoDB document (with ObjectId) to a serializable dict
@@ -43,7 +43,7 @@ async def create_course(course: dict):
     try:
         # Insert the course data into the MongoDB "courses" collection
         result = db.courses.insert_one(course)
-        # Fetch the newly created course document
+        # Fetch the newly cerated course document 
         new_course = db.courses.find_one({"_id": result.inserted_id})
         # Return the newly created course
         return {"course": serialize_dict(new_course)}
@@ -53,7 +53,7 @@ async def create_course(course: dict):
 @app.get("/courses/")
 async def get_courses():
     try:
-        # Fetch all courses from the "courses" collection
+        # Fetch all the courses from course collection
         courses = db.courses.find()
         # Convert courses to a list of dictionaries
         course_list = [serialize_dict(course) for course in courses]
