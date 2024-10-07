@@ -39,3 +39,14 @@ The app connects to a MongoDB instance running locally at `mongodb://localhost:2
     "email": "johndoe@example.com",
     "age": 25
   }
+
+**Response:**
+```json
+
+{
+  "_id": "605c70f879b34815d0c66d4f",
+  "username": "johndoe",
+  "email": "johndoe@example.com",
+  "age": 25
+}
+
