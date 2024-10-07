@@ -40,6 +40,7 @@ The app connects to a MongoDB instance running locally at `mongodb://localhost:2
     "age": 25
   }
 
+
 **Response:**
 ```json
 
@@ -48,27 +49,4 @@ The app connects to a MongoDB instance running locally at `mongodb://localhost:2
   "username": "johndoe",
   "email": "johndoe@example.com",
   "age": 25
-}
-
-### Courses
-
-**Example Request:**
-
-```json
-{
-  "title": "Math 101",
-  "description": "Introduction to Algebra",
-  "instructor": "Dr. Jane Smith"
-}
-
-**Response:**
-```json
-
-{
-  "course": {
-    "_id": "605c70f879b34815d0c66d4f",
-    "title": "Math 101",
-    "description": "Introduction to Algebra",
-    "instructor": "Dr. Jane Smith"
-  }
 }
