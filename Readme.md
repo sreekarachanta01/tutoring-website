@@ -11,3 +11,31 @@ This project is a simple API model for managing courses and users in tutoring sy
  - Fetch a list of all courses using the `/courses/` endpoint.
 
  ## Project Structure
+
+ The project consists of two main parts:
+- **API Endpoints**: FastAPI is used to create RESTful endpoints for managing users and courses.
+- **MongoDB**: MongoDB is used as the database to store user and course information.
+
+### Files:
+- `main.py`: The FastAPI application with route handlers for managing users and courses.
+- `database.py` (optional): A separate file that can be used for handling MongoDB connections.
+
+### MongoDB Connection
+
+The app connects to a MongoDB instance running locally at `mongodb://localhost:27017` and uses the database `tutoring_db`. Make sure MongoDB is installed and running before starting the application.
+
+## API Endpoints
+
+### Users
+
+- **Create User**  
+  `POST /users/create`  
+  Accepts a JSON object representing the user and inserts it into the `users` collection.
+
+  **Example Request:**
+  ```json
+  {
+    "username": "johndoe",
+    "email": "johndoe@example.com",
+    "age": 25
+  }
